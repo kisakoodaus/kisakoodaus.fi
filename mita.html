@@ -1,0 +1,92 @@
+---
+---
+<h1>Mitä on kisakoodaus?</h1>
+<p>Kisakoodaus mittaa taitoa suunnitella ja toteuttaa
+algoritmeja. Kisoissa menestyminen vaatii kykyä
+ratkaista ongelmia sekä koodata nopeasti ja virheettömästi.</p>
+<p>Ohjelmointikisassa on joukko tehtäviä,
+jotka täytyy ratkaista tietyn ajan kuluessa.
+Yleensä jokaisen tehtävän ratkaisu on ohjelma, joka lukee syötteen,
+ratkaisee tehtävän ja tulostaa vastauksen.</p>
+<p>Ratkaisun arvostelu tapahtuu automaattisesti testaamalla
+sitä joukolla testisyötteitä.
+Testauksessa tutkitaan, toimiiko ratkaisu oikein ja
+riittävän tehokkaasti.</p>
+<h2>Esimerkkitehtävä</h2>
+<p>Annettuna on merkkijono, jossa on <i>n</i> merkkiä
+väliltä A–Z.
+Tehtäväsi on tutkia, saako merkkijonosta palindromin
+järjestämällä merkit sopivasti.</p>
+
+<p>Esimerkiksi jos merkkijono on <code>ABABC</code>,
+siitä saa palindromin <code>ABCBA</code>.
+Merkkijonosta <code>ABADC</code> taas ei
+saa palindromia millään tavalla.</p>
+<p>Ohjelmasi tulee tulostaa "YES", jos merkkijonosta saa palindromin,
+ja muuten "NO".</p>
+<h2>Ratkaisun idea</h2>
+
+<p>Lasketaan jokaisesta merkistä, montako kertaa se esiintyy
+merkkijonossa.
+Jos kaikkia merkkejä on parillinen määrä tai tasan
+yhtä merkkiä on pariton määrä,
+merkeistä voi muodostaa palindromin.
+Jälkimmäisessä tapauksessa pariton merkki
+on palindromin keskellä.</p>
+
+<h2>Ratkaisu C++-koodina</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">c</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="sc">'Z'</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">z</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">z</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"YES</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"NO</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1>Näin pääset alkuun</h1>
+<h2>1. Opettele C++</h2>
+<p>Kisakoodaus vaatii sujuvaa ohjelmointitaitoa.
+Paras valinta kieleksi on C++, joka on tehokas ja
+jonka ominaisuudet sopivat hyvin kisakoodaukseen.</p>
+<p>Kisakoodaus ei vaadi kielen erikoisominaisuuksien
+tuntemista.
+Muuttujat, taulukot, ehdot, silmukat ja funktiot
+riittävät pitkälle kisakoodauksessa.</p>
+<h2>2. Lue KKKK</h2>
+<p>Kisakoodarin käsikirja eli KKKK sisältää paljon
+tietoa kisakoodauksesta.
+Voit opetella sen avulla tärkeitä tietorakenteita
+ja algoritmeja.
+Voit kopioida KKKK:n itsellesi <a href="/kkkk.pdf">tästä</a>.</p>
+<p>KKKK sisältää myös syventäviä asioita algoritmiikasta,
+jotka ovat aluksi vaikeita.
+Kaikkea ei tarvitse oppia heti, vaan voit perehtyä
+asioihin pikkuhiljaa.</p>
+<h2>3. Harjoittele</h2>
+<p>Datatähden valmennuskurssi on hyvä paikka harjoitella
+kisakoodausta. Kurssi sisältää 200 tehtävää, jotka
+vaikeutuvat pikkuhiljaa.
+Kurssi on CSES:ssä ja pääset siihen <a href="https://cses.fi/dt/">tästä</a>.</p>
+<h2>4. Osallistu kisoihin</h2>
+<p><a href="http://www.codeforces.com/">Codeforces</a> järjestää
+viikoittain nettikisoja. Sivuston käyttäjät ovat kahdessa
+sarjassa: aloittelijat ovat Div2:ssa ja pidemmälle päässeet ovat Div1:ssä.</p>
+<p>Hyviä kisoja kisakoodauksen aloittamiseen
+ovat myös <a href="http://www.usaco.org/">USACO</a>
+ja <a href="http://hsin.hr/coci/">COCI</a>.
+Näitä kisoja järjestetään syksystä kevääseen noin kuukauden välein.</p>
+<p>Osallistu kisoihin aina, kun pystyt. Mitä useammin osallistut,
+sitä enemmän opit.</p>
