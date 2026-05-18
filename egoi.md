@@ -8,6 +8,15 @@ algoritmien ohjelmointi.
 
 ## Aiemmat vuodet
 
+### EGOI 2026: Italia
+
+Suomen joukkue:
+
+- Mariia Kurdina (pronssi)
+- Viivi Pitsinki
+
+Ohjaajat: Johanna Tuhkanen ja Mette Munne
+
 ### EGOI 2025: Saksa
 
 Suomen joukkue:
